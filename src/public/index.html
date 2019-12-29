@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        
+    </head>
+    <body style="overflow-y:hidden;">
+        <div class="bg-image"></div>
+        <div id="bg-text">
+          <h2 id="head">WEATHER APP</h2>
+            <input id="city" type="text" placeholder="आपका शहर कौन सा है?" required/><br><br>
+            <button id="submit">Gimme The Numbers!</button>
+
+            <p id="result"></p>
+
+          </div>
+    </body>
+    <script>
+        let city=document.getElementById("city");
+        let result = document.getElementById("result");
+        let enterBtn = document.getElementById("submit");
+        enterBtn.addEventListener("click",function(){
+        getWeather(city.value);
+    })
+
+    
+             let getWeather = function(city){
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET",`/weather?city=${city}`);
+        xhr.send();
+        
+        xhr.onload = function(){
+            if(this.readyState == 4 && this.status == 200)
+            {
+                let tem=JSON.parse(this.responseText).result;
+                result.textContent = JSON.parse(this.responseText).result + " °C";
+               if(tem<25){
+                document.getElementById('bg-text').style.backgroundColor="rgba(79, 180, 223, 0.6)";
+               }
+               else if(tem>25){
+                document.getElementById('bg-text').style.backgroundColor="rgba(231, 76, 60,0.6)";
+               }
+            }else{
+                result.textContent = JSON.parse(this.responseText).error;
+            }
+        }
+    }
+
+    </script>
+</html>

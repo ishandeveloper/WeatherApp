@@ -1,0 +1,90 @@
+.center {
+    padding: 70px 0;
+    background:rgba(0,0,0,0);
+    text-align: center;
+  }
+  body, html {
+    height: 100%;
+    font-family:"Segoe UI Light";
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .bg-image {
+    /* The image used */
+    background-image: url("img/abc.gif");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    
+    background-size:cover;
+  }
+
+  #bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border:1px solid white;
+   border-radius:50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 400px;
+    height:400px;
+    padding: 100px;
+    transition: all ease-in-out 1s;
+    text-align: center;
+  }
+
+  #head{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     
+  }
+  #city{
+        color:white;
+        background:none;
+        border:none;
+        padding:2px 5px;
+        font-size:1.2em;
+        width:200px;
+        text-align:center;
+    
+        outline:none;
+        transition: all ease-in-out 0.5s;
+  }
+  #city:focus{
+      border-bottom:1px solid white;
+      transition: all ease-in-out 0.5s;
+  }
+  ::placeholder{
+      color:white;
+  }
+  #submit{
+      width:auto;
+      height:auto;
+      border-radius: 20px;
+      padding:8px 20px;
+      border:1px solid white;
+      background:none;
+      color:white;
+      cursor:hand;
+      outline:none;
+      transition: all ease-in-out 0.5s;
+  }
+  #submit:hover{
+    background:white;
+    color:black;
+    transition: all ease-in-out 0.5s;
+  }
